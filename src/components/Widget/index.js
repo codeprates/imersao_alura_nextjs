@@ -7,7 +7,7 @@ const Widget = styled.div`
   background-color: ${({ theme }) => {
     return theme.colors.mainBg
   }};
-  opacity: .5;
+  opacity: .75;
   border-radius: 4px;
   overflow: hidden;
 
