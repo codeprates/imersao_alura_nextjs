@@ -25,7 +25,7 @@ export default function Home() {
             <h1>Quiz da natureza</h1>
           </Widget.Header>
           <Widget.Content>
-            <p>Loren ipsum </p>
+            <p>Teste aqui os seus conhecimentos sobre as coisas mais bizarras da natureza!</p>
           </Widget.Content>
         </Widget>
         <Widget>
