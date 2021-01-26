@@ -22,7 +22,7 @@ export default function Home() {
       <QuizContainer>
         <Widget>
           <Widget.Header>
-            <h1>Titulo</h1>
+            <h1>Quiz da natureza</h1>
           </Widget.Header>
           <Widget.Content>
             <p>Loren ipsum </p>
