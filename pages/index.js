@@ -1,31 +1,54 @@
-import styled from 'styled-components'
-import db from '../db.json'
-import Widget from '../src/components/Widget' 
-import Footer from '../src/components/Footer'
-import GitHubCorner from '../src/components/GitHubCorner'
-import QuizBackground from '../src/components/QuizBackground'
+import React from 'react';
+import styled from 'styled-components';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
 
-export const QuizContainer = styled.div`
-  width: 100%;
-  max-width: 350px;
-  padding-top: 45px;
-  margin: auto 10%;
-  @media screen and (max-width: 500px) {
-    margin: auto;
-    padding: 15px;
-  }
-`;
+import db from '../db.json';
+import Input from '../src/components/Input';
+import Button from '../src/components/Button';
+import Widget from '../src/components/Widget';
+import Footer from '../src/components/Footer';
+import QuizLogo from '../src/components/QuizLogo';
+import GitHubCorner from '../src/components/GitHubCorner';
+import QuizContainer from '../src/components/QuizContainer';
+import QuizBackground from '../src/components/QuizBackground';
 
 export default function Home() {
+  const router = useRouter();
+  const [nomeUsuario, setNomeUsuario] = React.useState('');
+  // console.log('retorno do useState', nomeUsuario, setNomeUsuario);
+
   return (
     <QuizBackground backgroundImage={db.bg}>
+      <Head>
+        <title>AluraQuiz - Modelo Base</title>
+      </Head>
       <QuizContainer>
+        <QuizLogo />
         <Widget>
           <Widget.Header>
             <h1>Quiz da natureza</h1>
           </Widget.Header>
           <Widget.Content>
-            <p>Teste aqui os seus conhecimentos sobre as coisas mais bizarras da natureza!</p>
+            <form onSubmit={function (infosDoEvento) {
+              infosDoEvento.preventDefault();
+              router.push(`/quiz?name=${nomeUsuario}`);
+              // console.log('fazendo uma submissão pelo react');
+            }}
+            >
+              <Input
+                nomeUsuario="nomeDoUsuario"
+                onChange={(infosDoEvento) => {
+                  // console.log(infosDoEvento.target.value);
+                  setNomeUsuario(infosDoEvento.target.value);
+                }}
+                placeholder="Coloque seu nome aqui"
+                value={nomeUsuario}
+              />
+              <Button type="submit" disabled={nomeUsuario.length === 0}>
+                {`Jogar ${nomeUsuario}`}
+              </Button>
+            </form>
           </Widget.Content>
         </Widget>
         <Widget>
@@ -36,8 +59,7 @@ export default function Home() {
         </Widget>
         <Footer />
       </QuizContainer>
-      <GitHubCorner projectUrl='https://github.com/codeprates' />
+      <GitHubCorner projectUrl="https://github.com/codeprates" />
     </QuizBackground>
   );
 }
-

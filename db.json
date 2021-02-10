@@ -1,8 +1,8 @@
 
 {
   "bg": "https://source.unsplash.com/IRzfQm79qxQ/4451x2959",
-  "title": "Quiz CSS da Alura",
-  "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
+  "title": "Título do Quiz",
+  "description": "Teste os seus conhecimentos sobre xyz e vamos ver qunatos acertos você terá",
   "questions": [
     {
       "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",

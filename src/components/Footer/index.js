@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 // src/components/Footer/index.js
 const FooterWrapper = styled.footer`
@@ -17,7 +17,7 @@ const FooterWrapper = styled.footer`
     transition: .3s;
     &:hover,
     &:focus {
-      opacity: .5;
+      opacity: .35;
     }
     span {
       text-decoration: underline;
@@ -43,4 +43,4 @@ export default function Footer(props) {
       </p>
     </FooterWrapper>
   );
-} 
+}
